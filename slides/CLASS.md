@@ -1,12 +1,174 @@
-### MelbDjango School - Lesson Four
+### MelbDjango School - Lesson Five
 
-Django Forms & Testing
+Class Based Views & ModelForms
 
 ---
 
 ### WIFI
 
 Common Code / cc&20!4@
+
+---
+
+### A brief look at OO
+
+- Object Oriented Programming
+- Software development methodology
+- Objects are things - Any-things
+- Concept first goes back to the 60s
+- Popularised by the Smalltalk language in the early 1980s
+- Became a dominant programming methodology with the introduction of C++, Visual FoxPro and Delphi
+- Python, Java, Javascript, Ruby, Perl, Lisp (to name a few) - All incorporate OO concepts
+
+---
+
+### Classes
+
+- A Class defines an object
+- What sort of object? - Anything!
+
+---
+
+### A Car
+
+![](http://www.wellclean.com/wp-content/themes/artgallery_3.0/images/car3.png)
+
+---
+
+### A Person
+
+![](http://vignette2.wikia.nocookie.net/kimpossible/images/8/86/Placeholder_person.png)
+
+---
+
+### A Car Person
+
+![](http://beakerhead.com/wp-content/uploads/2014/04/art-car-parade.jpg)
+
+---
+
+### Properties of Python classes
+
+- Attributes
+- Methods
+- Bases (For managing inheritance)
+
+---
+
+### Attributes
+
+- Describe the object
+  - Car - Engine, Wheels, Seats, Doors...
+  - Person - Head, Eyes, Arms, Legs...
+
+---
+
+### Methods
+
+- Describe what the object can do
+  - Car - Drive, Turn, Stop
+  - Person - Walk, Run, Talk
+
+---
+
+### Classes in Python
+
+- Define a basic Vehicle
+  - Attributes: Engine, Wheels
+  - Methods: Drive, Stop
+
+```
+class DefaultVehicle:
+    engine = '4 Cylinder'
+    wheels = 4
+
+    def drive(self):
+        pass
+
+    def stop(self):
+        pass
+```
+
+---
+
+### Inheritance
+
+- Define a Tank using our DefaultVehicle class as a base
+
+![](http://www.incredible-adventures.com/tanks/drive-tank-001.jpg)
+
+---
+
+### Tank Class
+
+- In addition to DefaultVehicle it has a turret and can shoot
+- Engine and wheels values are also different
+
+```
+class Tank(DefaultVehicle):
+    engine = 'Massive' # Try googling for "tank engine"
+    wheels = 20
+    turret = 'Large calibre'
+
+    def shoot(self):
+        pass
+```
+
+- Tank still has drive and stop capabilities as they are implied by inheriting from the parent class DefaultVehicle
+- Tank __overloaded__ the engine and wheels with its own values
+
+---
+
+### Another class example
+
+- Person
+
+```
+class Person:
+    head = 'Large'
+    eyes = 2
+    arms = 2
+    legs = 2
+
+    def walk(self):
+        pass
+
+    def run(self):
+        pass
+
+    def talk(self):
+        pass
+```
+
+---
+
+### Mix it up
+
+- What sort of object will this code produce?
+
+```
+class VehiclePerson(DefaultVehicle, Person):
+    pass
+```
+
+- Remember that the attributes and methods of both __superclasses__ are implied by this definition
+
+---
+
+### Something like this?
+
+![](http://beakerhead.com/wp-content/uploads/2014/04/art-car-parade.jpg)
+
+---
+
+### OO Jargon
+
+- Inheritance
+  - Objects inherit everything from their parent (super) class
+  - Tank inherited wheels, engine, drive() and stop() from DefaultVehicle
+- Overloading
+- Mixins
+- Polmorphism
 
 ---
 

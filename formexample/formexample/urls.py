@@ -20,7 +20,7 @@ import formapp.views
 
 
 urlpatterns = [
-    url(r'^$', formapp.views.example, name='html_form'),
-    url(r'^django-form/$', formapp.views.django_example, name='django_form'),
+    url(r'^$', formapp.views.RootRedirectView.as_view(), name='root'),
+    url(r'^django-form/$', formapp.views.PersonCreateView.as_view(), name='django_form'),
     url(r'^admin/', include(admin.site.urls)),
 ]

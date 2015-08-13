@@ -551,16 +551,25 @@ class HelloWorldForm(forms.ModelForm):
 
 ---
 
-## References
-
-- https://ccbv.co.uk/
-- https://github.com/MelbDjango/lesson-five
-- REFERENCES.md in lesson-five repo
-- Check out formexample
-
----
-
 ## Homework
 
 - Last week's solution in lesson-five repo (bootstrappy)
-- Darren? Brenton?
+
+### This week's homework
+
+- Fork https://github.com/MelbDjango/lesson-five
+- Clone the repo to your own machine
+- Use the virtualenv you created in previous lesson
+- Convert time-tracker forms and views to ModelForms and Generic Class Based Views
+- Bonus 1: Create a RedirectView to redirect visitors from the root of the site (/) to the /clients/ page
+- Bonus 2: Add a button to the "entries" form (/entries/) called "Create Entry with End Now"
+  - This button should be an alternative submit button that automatically sets the end time to be the current time
+
+---
+
+## References
+
+- https://ccbv.co.uk/
+- REFERENCES.md in lesson-five repo
+- Check out formexample
+

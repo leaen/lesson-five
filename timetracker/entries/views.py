@@ -14,7 +14,7 @@ def clients(request):
             # client = Client()
             # client.name = form.cleaned_data['name']
             # client.save()
-            # Sometimes you don't want to save the object until the end, 
+            # Sometimes you don't want to save the object until the end,
             # sometimes you don't care!
             client = Client.objects.create(name=form.cleaned_data['name'])
     else:
@@ -54,7 +54,7 @@ def entries(request):
             # If the form is valid, let's create and Entry with the submitted data
             entry = Entry()
             entry.start = entry_form.cleaned_data['start']
-            entry.end = entry_form.cleaned_data['end']
+            entry.stop = entry_form.cleaned_data['stop']
             entry.project = entry_form.cleaned_data['project']
             entry.description = entry_form.cleaned_data['description']
             entry.save()

@@ -15,7 +15,7 @@ class ProjectForm(forms.Form):
 
 class EntryForm(forms.Form):
     start = forms.DateTimeField(label="Start Time", help_text="Format: 2006-10-25 14:30")
-    end = forms.DateTimeField(label="End Time", help_text="Format: 2006-10-25 14:30")
+    stop = forms.DateTimeField(label="End Time", help_text="Format: 2006-10-25 14:30")
     project = forms.ModelChoiceField(queryset=Project.objects.all())
     description = forms.CharField()
 
@@ -37,7 +37,7 @@ class EntryForm(forms.Form):
         """
         # Call parent's clean method to ensure any validation logic in parent class
         # is preserved
-        cleaned_data = super(EntryForm, self).clean()        
+        cleaned_data = super(EntryForm, self).clean()
 
         # Get the start and end values from the cleaned_data dictionary, or None
         # if the dictionary keys are missing
@@ -47,6 +47,3 @@ class EntryForm(forms.Form):
         if end and start and (end < start):
             raise forms.ValidationError('End time must come after start time')
         # No need to return anything (Django 1.7 and above)
-
-
-

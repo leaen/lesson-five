@@ -535,17 +535,19 @@ class HelloWorldForm(forms.ModelForm):
 - A kind of "settings" or "config" for many django class types
 - Used on models too!
 
-```
-class Person(models.Model):
-    class Meta:
-        verbose_name_plural = 'People'
-        
-    name = models.CharField(max_length=30)
-    awesome = models.BooleanField()
+  ```
+  class Person(models.Model):
+      class Meta:
+          verbose_name_plural = 'People'
+          
+      name = models.CharField(max_length=30)
+      awesome = models.BooleanField()
 
-    def __str__(self):
-        return '{} ({})'.format(self.name, 'Totally Awesome' if self.awesome else 'Lame')
-```
+      def __str__(self):
+          return '{} ({})'.format(self.name, 'Totally Awesome' if self.awesome else 'Lame')
+  ```
+
+- Check django docs for uses
 
 ---
 

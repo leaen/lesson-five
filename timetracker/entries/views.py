@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 
 from .forms import EntryForm, ProjectForm, ClientForm
 from .models import Client, Entry, Project
@@ -17,6 +17,7 @@ def clients(request):
             # Sometimes you don't want to save the object until the end,
             # sometimes you don't care!
             client = Client.objects.create(name=form.cleaned_data['name'])
+            return redirect('client-list')
     else:
         form = ClientForm()
 
@@ -36,6 +37,7 @@ def client_detail(request, pk):
             # Update client details
             client.name = form.cleaned_data['name']
             client.save()
+            return redirect('client-list')
     else:
         # Initialise form with client data
         form = ClientForm(initial={'name': client.name})
@@ -58,6 +60,7 @@ def entries(request):
             entry.project = entry_form.cleaned_data['project']
             entry.description = entry_form.cleaned_data['description']
             entry.save()
+            return redirect('entry-list')
     else:
         entry_form = EntryForm()
 
@@ -77,6 +80,7 @@ def projects(request):
                 name=form.cleaned_data['name'],
                 client=form.cleaned_data['client']
             )
+            return redirect('project-list')
     else:
         form = ProjectForm()
 
@@ -97,6 +101,7 @@ def project_detail(request, pk):
             project.name = form.cleaned_data['name']
             project.client=form.cleaned_data['client']
             project.save()
+            return redirect('project-list')
     else:
         # Initialise form with project data
         form = ProjectForm(initial={'name': project.name, 'client': project.client})

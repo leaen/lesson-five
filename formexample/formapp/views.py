@@ -28,7 +28,7 @@ def django_example(request):
 
 class PersonCreateView(CreateView):
     """
-    View to create an AwesomePerson instance every 
+    View to create aa Person instance every 
     time the form is submitted
     """
     model = Person
@@ -50,6 +50,6 @@ class PersonCreateView(CreateView):
 
 class RootRedirectView(RedirectView):
     permanent = False
-    
+
     def get_redirect_url(self):
         return reverse('django_form')

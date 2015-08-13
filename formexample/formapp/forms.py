@@ -18,9 +18,13 @@ class HelloWorldForm(forms.ModelForm):
     class Meta:
         model = Person
         fields = ('name', 'awesome')
+        labels = {
+            'awesome': 'Are they awesome?'
+        }
+        # widgets = {}
 
-        # Can specify a lot of form settings here
-        # widgets, labels etc
+    # Field overrides go here
+    name = forms.CharField(label="Say Hello")
 
     def save(self, commit=True):
         """

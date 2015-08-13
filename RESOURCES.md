@@ -1,4 +1,4 @@
-# MelbDjango School Lesson Four Resources
+# MelbDjango School Lesson Five Resources
 
 Resources are back!
 
@@ -14,11 +14,20 @@ Django has a whole bunch of documentation about it's forms:
 - https://docs.djangoproject.com/en/1.8/ref/forms/fields/
 - https://docs.djangoproject.com/en/1.8/ref/forms/validation/
 
-
 Plus, Django Girls has a great [end-to-end example of using forms]
 (http://tutorial.djangogirls.org/en/django_forms/index.html)
-
 
 See also:
 FormSets
 "Formulation"
+
+ModelForms!
+- https://docs.djangoproject.com/en/1.8/topics/forms/modelforms/
+
+Class Based Views:
+- https://ccbv.co.uk/
+- https://docs.djangoproject.com/en/1.8/topics/class-based-views/
+- https://docs.djangoproject.com/en/1.8/topics/class-based-views/intro/
+- https://docs.djangoproject.com/en/1.8/topics/class-based-views/generic-display/
+- https://docs.djangoproject.com/en/1.8/topics/class-based-views/generic-editing/
+- https://docs.djangoproject.com/en/1.8/topics/class-based-views/mixins/

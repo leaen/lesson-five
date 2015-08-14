@@ -35,7 +35,7 @@ Install reveal-md with npm and use that to display the class slides.
     npm install -g reveal-md
 ```
 
-From within the `lesson-four` repo:
+From within the `lesson-five` repo:
 
 ```
     cd slides

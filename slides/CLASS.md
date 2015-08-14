@@ -374,14 +374,15 @@ url(r'^my-models/(?P<pk>\d+)/delete/$', MyModelDeleteView.as_view(), name='my-mo
 
 ## FormView
 
-- Delete a single model instance
+- Display a template with a form
 
 ```
 from django.views.generic import FormView
 
 class MyFormView(FormView):
-    form_class = Form
+    form_class = MyForm
     success_url = '/'
+    template_name = 'my_template.html'
     # That's it!
 ```
 
@@ -438,12 +439,11 @@ class Person(models.Model):
 
 ```
 def person_create(request):
-    person = get_object_or_404(Person, pk=pk) 
-
     if request.method == 'POST':
         form = HelloWorldForm(request.POST)
         if form.is_valid():
             # Create person instance
+            person = Person()
             person.name = form.cleaned_data['name']
             person.awesome = form.cleaned_data['awesome']
             person.save()
@@ -466,10 +466,12 @@ def person_create(request):
 ## Generic class based view implementation
 
 ```
+from django.views.generic import CreateView
+from django.core.urlresolvers import reverse
+
 class PersonCreateView(CreateView):
     """
-    View to create aa Person instance every 
-    time the form is submitted
+    View to create a Person instance every time the form is submitted
     """
     model = Person
     template_name = 'django_form.html'
@@ -493,6 +495,8 @@ class PersonCreateView(CreateView):
 ## Last week's form
 
 ```
+from django import forms
+
 class HelloWorldForm(forms.Form):
     name = forms.CharField(required=True, label="Say Hello")
     awesome = forms.BooleanField(label="Are they awesome?")
@@ -520,12 +524,16 @@ class HelloWorldForm(forms.ModelForm):
         model = Person
         fields = ('name', 'awesome')
         labels = {
+            'name': 'Say Hello',
             'awesome': 'Are they awesome?'
         }
         # widgets = {}
 
-    # Field overrides go here
-    name = forms.CharField(label="Say Hello") # Could have just used Meta.labels
+    def clean_name(self):
+        name = self.cleaned_data['name']
+        if not name.lower().startswith('b'):
+            raise forms.ValidationError("Wait a second, your name doesn't start with B!")
+        return name
 ```
 
 ---

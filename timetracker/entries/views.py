@@ -111,3 +111,6 @@ def project_detail(request, pk):
         'project': project,
         'form': form,
     })
+
+def root(request):
+    return redirect('client-list')

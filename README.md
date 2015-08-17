@@ -18,7 +18,7 @@ Check our RESOURCES.md for some links we think you'll find handy.
 - [ ] Clone the repo to your own machine
 - [ ] Use the virtualenv you created in previous lesson
 - [ ] Convert time-tracker forms and views to ModelForms and Generic Class Based Views
-- [ ] Bonus 1: Create a RedirectView to redirect visitors from the root of the site (/) to the /clients/ page
+- [X] Bonus 1: Create a RedirectView to redirect visitors from the root of the site (/) to the /clients/ page
 - [ ] Bonus 2: Add a button to the "entries" form (/entries/) called "Create Entry with End Now"
   - This button should be an alternative submit button that automatically sets the end time to be the current time
 

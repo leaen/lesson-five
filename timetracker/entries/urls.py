@@ -4,7 +4,7 @@ from . import views
 
 
 urlpatterns = [
-    url(r'^$', views.root, name='root'),
+    url(r'^$', views.RootRedirectView.as_view(), name='root'),
     url(r'^clients/$', views.ClientListView.as_view(), name='client-list'),
     url(r'^clients/create$', views.ClientCreateView.as_view(), name='client-create'),
     url(r'^clients/(?P<pk>\d+)/$', views.ClientDetailView.as_view(), name='client-detail'),

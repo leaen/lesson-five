@@ -1,11 +1,15 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.views.generic import DetailView, ListView, CreateView
+from django.views.generic import DetailView, ListView, CreateView, RedirectView
+from django.core.urlresolvers import reverse_lazy
 
 from .forms import EntryForm, ProjectForm, ClientForm
 from .models import Client, Entry, Project
 
-def root(request):
-    return redirect('client-list')
+class RootRedirectView(RedirectView):
+    permanent = False
+
+    def get_redirect_url(self, *args, **kwargs):
+        return reverse_lazy('client-list')
 
 class ClientDetailView(DetailView):
     model = Client

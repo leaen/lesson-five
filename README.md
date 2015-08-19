@@ -14,9 +14,9 @@ Check our RESOURCES.md for some links we think you'll find handy.
 
 ## Homework Checklist
 
-- [ ] [Fork this repository][gh-fork]
-- [ ] Clone the repo to your own machine
-- [ ] Use the virtualenv you created in previous lesson
+- [X] [Fork this repository][gh-fork]
+- [X] Clone the repo to your own machine
+- [X] Use the virtualenv you created in previous lesson
 - [ ] Convert time-tracker forms and views to ModelForms and Generic Class Based Views
 - [X] Bonus 1: Create a RedirectView to redirect visitors from the root of the site (/) to the /clients/ page
 - [ ] Bonus 2: Add a button to the "entries" form (/entries/) called "Create Entry with End Now"

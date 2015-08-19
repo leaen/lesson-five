@@ -4,13 +4,18 @@ from django.utils import timezone
 from .models import Project, Client
 
 
-class ClientForm(forms.Form):
-    name = forms.CharField()
+class ClientForm(forms.ModelForm):
+    class Meta:
+        model = Client
+        fields = '__all__'
 
+class ProjectForm(forms.ModelForm):
+    class Meta:
+        model = Project
+        fields = '__all__'
 
-class ProjectForm(forms.Form):
-	name = forms.CharField()
-	client = forms.ModelChoiceField(queryset=Client.objects.all())
+    #name = forms.CharField()
+    #client = forms.ModelChoiceField(queryset=Client.objects.all())
 
 
 class EntryForm(forms.Form):

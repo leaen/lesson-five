@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.core.urlresolvers import reverse
 
 
 class Client(models.Model):
@@ -8,6 +9,9 @@ class Client(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse('client-detail', kwargs={'pk': self.pk})
+
 
 class Project(models.Model):
     client = models.ForeignKey('Client', blank=True, null=True)
@@ -15,6 +19,9 @@ class Project(models.Model):
 
     def __str__(self):
         return '<{}> {}'.format(self.client, self.name)
+
+    def get_absolute_url(self):
+        return reverse('project-detail', kwargs={'pk': self.pk})
 
 
 # Create your models here.
